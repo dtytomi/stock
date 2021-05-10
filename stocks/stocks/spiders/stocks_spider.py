@@ -23,7 +23,7 @@ class StocksSpider(scrapy.Spider):
 
             stock['company'] = row.css('td::text').get()
             stock['closing_price'] = row.css('td::text')[5].get()
-            stock['trade_date'] = response.css('span.sectional-heading::text').re(r'\d+\W\d+\W\d+')[0]
+            stock['trading_date'] = response.css('span.sectional-heading::text').re(r'\d+\W\d+\W\d+')[0]
             
             x = datetime.datetime.now()
             stock['date'] = x.strftime("%Y-%m-%d %H:%M:%S")
