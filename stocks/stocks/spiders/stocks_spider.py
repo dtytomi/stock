@@ -18,11 +18,14 @@ class StocksSpider(scrapy.Spider):
 
         stock = StockItem()
 
+        rows = response.xpath(
+            '//table[@class="table table-striped table-bordered table-hover table-condensed"]/tbody/tr')
 
-        for row in response.css('table.table tbody tr'):
 
-            stock['company'] = row.css('td::text').get()
-            stock['closing_price'] = row.css('td::text')[5].get()
+        for row  in rows:
+
+            stock['company'] = row.xpath('td[1]/text()').get()
+            stock['closing_price'] = row.xpath('td[5]/text()').get()
             stock['trading_date'] = response.css('span.sectional-heading::text').re(r'\d+\W\d+\W\d+')[0]
             
             x = datetime.datetime.now()

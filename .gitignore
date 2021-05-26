@@ -103,3 +103,5 @@ crawl
 
 # mypy
 .mypy_cache/
+
+*.json
