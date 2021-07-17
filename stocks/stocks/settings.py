@@ -53,9 +53,9 @@ DEFAULT_REQUEST_HEADERS = {
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
-DOWNLOADER_MIDDLEWARES = {
-    'stocks.middlewares.StocksDownloaderMiddleware': 543,
-}
+# DOWNLOADER_MIDDLEWARES = {
+#    'stocks.middlewares.StocksDownloaderMiddleware': 543,
+# }
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
@@ -108,7 +108,7 @@ AJAXCRAWL_ENABLED = True
 CONNECTION_STRING = "{drivername}://{user}:{passwd}@{host}:{port}/{db_name}?charset=utf8".format(
     drivername="mysql",
     user="root",
-    passwd="t0m1x@Scrapy",
+    passwd="t0m1x_Scrapy",
     host="localhost",
     port="3306",
     db_name="pension_toscrape",

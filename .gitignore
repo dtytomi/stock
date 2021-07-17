@@ -89,7 +89,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-crawl
+crawller
 
 # Spyder project settings
 .spyderproject

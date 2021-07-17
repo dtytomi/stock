@@ -1,5 +1,4 @@
 import scrapy
-import logging
 import datetime
 from stocks.items import StockItem
 
@@ -25,7 +24,7 @@ class StocksSpider(scrapy.Spider):
         for row  in rows:
 
             stock['company'] = row.xpath('td[1]/text()').get()
-            stock['closing_price'] = row.xpath('td[5]/text()').get()
+            stock['closing_price'] = row.xpath('td[6]/text()').get()
             stock['trading_date'] = response.css('span.sectional-heading::text').re(r'\d+\W\d+\W\d+')[0]
             
             x = datetime.datetime.now()
